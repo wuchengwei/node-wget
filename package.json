@@ -1,0 +1,16 @@
+{
+    "name": "wget",
+    "version": "0.0.0",
+    "description": "wget in nodejs.",
+    "keywords": ["download", "http", "https", "ftp", "proxy"],
+    "author": "Chengwei Wu <meegodevelop@gmail.com>",
+    "repository":{
+        "type": "git",
+        "url": "git://github.com/wuchengwei/node-wget.git"
+    },
+    "main": "./index.js",
+    "bin": {
+        "nwget": "./bin/nwget.js"
+    },
+    "engines": { "node": ">= 0.6.18" }
+}
