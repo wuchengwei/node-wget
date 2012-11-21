@@ -1,6 +1,6 @@
 {
     "name": "wget",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "wget in nodejs.",
     "keywords": ["download", "http", "https", "ftp", "proxy"],
     "author": "Chengwei Wu <meegodevelop@gmail.com>",
@@ -11,6 +11,9 @@
     "main": "./index.js",
     "bin": {
         "nwget": "./bin/nwget.js"
+    },
+    "dependencies": {
+        "tunnel": "0.0.2"
     },
     "engines": { "node": ">= 0.6.18" }
 }
