@@ -13,7 +13,7 @@ var wget = require('wget');
 var src = 'https://raw.github.com/Fyrd/caniuse/master/data.json';
 var output = '/tmp/data.json';
 var options = {
-    proxy: 'http://host:port
+    proxy: 'http://host:port'
 };
 var download = wget.download(src, output, options);
 download.on('error', function(err) {
