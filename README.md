@@ -1,10 +1,11 @@
 # node-wget
 
 A download tool, now supporting http/https resource and http/https proxy, written in nodejs.
+Forked from https://github.com/wuchengwei/node-wget
 
 # Installing
 ```
-npm install wget
+npm install mfx-wget
 ```
 
 # Usage
@@ -13,7 +14,7 @@ npm install wget
 ## download(src, output, options)
 
 ```js
-var wget = require('wget');
+var wget = require('mfx-wget');
 var src = 'https://raw.github.com/Fyrd/caniuse/master/data.json';
 var output = '/tmp/data.json';
 var options = {
@@ -24,6 +25,7 @@ download.on('error', function(err) {
     console.log(err);
 });
 download.on('end', function(output) {
+	// output is { name: filename, size: fileSize }
     console.log(output);
 });
 download.on('progress', function(progress) {

@@ -1,8 +1,9 @@
 var wget = require('../lib/wget');
 
-var download = wget.download('https://raw.github.com/Fyrd/caniuse/master/data.json', '/tmp/README.md');
+var download = wget.download('http://www.google.com', 'google.html');
 // with a proxy:
-// var download = wget.download('https://raw.github.com/Fyrd/caniuse/master/data.json', '/tmp/README.md', {proxy: 'http://proxyhost:port'});
+//var download = wget.download('http://www.google.com', 'google.html', {proxy: 'http://proxyhost:port'});
+
 download.on('error', function(err) {
     console.log(err);
 });
