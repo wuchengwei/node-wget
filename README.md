@@ -3,7 +3,7 @@
 wget-improved simplifies retrieving files from any URL
 
 Improvements over old wget module
-  - Handles 302 redirects (including infinite redirects)
+  - Handles 302 redirects (including infinite redirect loops)
   - Passes URL parameters
   - Better error reporting
 
@@ -13,7 +13,7 @@ Improvements over old wget module
 npm install wget-improved --save
 ```
 ```js
-var wget = require('wget');
+var wget = require('wget-improved');
 var src = 'http://nodejs.org/images/logo.svg';
 var output = '/tmp/logo.svg';
 var options = {
@@ -73,6 +73,6 @@ options = {}
         options.proxy.protocol = 'http';
         options.proxy.host = 'someproxy.org';
         options.proxy.port = 1337;
-        options.proxy.proxyAuth = '{basic auth};
+        options.proxy.proxyAuth = '{basic auth}';
         options.proxy.headers = {'User-Agent': 'Node'};
 ```
