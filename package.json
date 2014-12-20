@@ -14,9 +14,6 @@
         }
     ],
     "homepage": "https://github.com/bearjaws/wget-improved",
-    "bin": {
-        "nwget": "./bin/nwget.js"
-    },
     "dependencies": {
         "tunnel": "0.0.2"
     },
