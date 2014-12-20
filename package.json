@@ -1,14 +1,19 @@
 {
-    "name": "wget",
-    "version": "0.0.1",
-    "description": "wget in nodejs.",
-    "keywords": ["download", "http", "https", "ftp", "proxy"],
-    "author": "Chengwei Wu <meegodevelop@gmail.com>",
+    "name": "wget-improved",
+    "version": "0.9.0",
+    "description": "wget in nodejs, forked from wget to add improvements and help maintain the project",
+    "keywords": ["download", "http", "https", "ftp", "proxy", "wget"],
+    "author": "Michael Barajas <michael.a.barajas@gmail.com>",
     "repository":{
         "type": "git",
-        "url": "git://github.com/wuchengwei/node-wget.git"
+        "url": "git://github.com/bearjaws/node-wget.git"
     },
-    "main": "./index.js",
+    "contributors": [
+        {
+            "name": "Michael Barajas"
+        }
+    ],
+    "homepage": "https://github.com/bearjaws/wget-improved",
     "bin": {
         "nwget": "./bin/nwget.js"
     },

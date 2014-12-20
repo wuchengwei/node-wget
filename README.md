@@ -1,23 +1,23 @@
-# node-wget
+# wget-improved
 
-A download tool, now supporting http/https resource and http/https proxy, written in nodejs.
+wget-improved simplifies retrieving files from any URL
+
+Improvements over old wget module
+  - Handles 302 redirects (including infinite redirects)
+  - Passes URL parameters
+  - Better error reporting
+
 
 # Installing
 ```
-npm install wget
+npm install wget-improved --save
 ```
-
-# Usage
-
-<a name="download" />
-## download(src, output, options)
-
 ```js
 var wget = require('wget');
-var src = 'https://raw.github.com/Fyrd/caniuse/master/data.json';
-var output = '/tmp/data.json';
+var src = 'http://nodejs.org/images/logo.svg';
+var output = '/tmp/logo.svg';
 var options = {
-    proxy: 'http://host:port'
+//see options below
 };
 var download = wget.download(src, output, options);
 download.on('error', function(err) {
@@ -64,4 +64,15 @@ req.end();
 req.on('error', function(err) {
     console.log(err);
 });
+```
+#download and request method options
+```js
+
+options = {}
+    options.proxy = {};
+        options.proxy.protocol = 'http';
+        options.proxy.host = 'someproxy.org';
+        options.proxy.port = 1337;
+        options.proxy.proxyAuth = '{basic auth};
+        options.proxy.headers = {'User-Agent': 'Node'};
 ```
