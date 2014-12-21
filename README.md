@@ -6,7 +6,7 @@ Improvements over old wget module
   - Handles 302 redirects (including infinite redirect loops)
   - Passes URL parameters
   - Better error reporting
-  - Does not write using append (now uses w+ identical to wget)
+  - Does not write using append (uses w+ identical to wget)
   - Handles gzip compression, allow you to automatically gunzip the stream
 
 
