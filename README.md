@@ -6,6 +6,8 @@ Improvements over old wget module
   - Handles 302 redirects (including infinite redirect loops)
   - Passes URL parameters
   - Better error reporting
+  - Does not write using append (now uses w+ identical to wget)
+  - Handles gzip compression, allow you to automatically gunzip the stream
 
 
 # Installing
@@ -69,6 +71,8 @@ req.on('error', function(err) {
 ```js
 
 options = {}
+    // Set to true to have any gzip stream automatically decompressed before saving
+    options.gunzip = false;
     options.proxy = {};
         options.proxy.protocol = 'http';
         options.proxy.host = 'someproxy.org';
@@ -76,3 +80,7 @@ options = {}
         options.proxy.proxyAuth = '{basic auth}';
         options.proxy.headers = {'User-Agent': 'Node'};
 ```
+
+
+#Todo
+Enable gzip when using request method
