@@ -1,12 +1,12 @@
 {
-    "name": "wget",
-    "version": "0.0.1",
+    "name": "mfx-wget",
+    "version": "0.0.4",
     "description": "wget in nodejs.",
     "keywords": ["download", "http", "https", "ftp", "proxy"],
-    "author": "Chengwei Wu <meegodevelop@gmail.com>",
+    "author": "Marco Foschian <marco.foschian@gmail.com>",
     "repository":{
         "type": "git",
-        "url": "git://github.com/wuchengwei/node-wget.git"
+        "url": "https://github.com/mfoschian/node-wget.git"
     },
     "main": "./index.js",
     "bin": {
