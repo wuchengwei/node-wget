@@ -1,6 +1,6 @@
 {
     "name": "mfx-wget",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "wget in nodejs.",
     "keywords": ["download", "http", "https", "ftp", "proxy"],
     "author": "Marco Foschian <marco.foschian@gmail.com>",
