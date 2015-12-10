@@ -25,6 +25,9 @@ var download = wget.download(src, output, options);
 download.on('error', function(err) {
     console.log(err);
 });
+download.on('start', function(fileSize) {
+    console.log(fileSize);
+});
 download.on('end', function(output) {
     console.log(output);
 });
