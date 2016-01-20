@@ -36,7 +36,9 @@ download.on('progress', function(progress) {
 });
 ```
 
+
 <a name="request" />
+
 ## request(options, callback)
 
 ```js
