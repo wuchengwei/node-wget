@@ -2,24 +2,27 @@
 
 wget-improved simplifies retrieving files from any URL
 
-Improvements over old wget module
-  - Handles 302 redirects (including infinite redirect loops)
-  - Passes URL parameters
-  - Better error reporting
-  - Does not write using append (uses w+ identical to wget)
-  - Handles gzip compression, allow you to automatically gunzip the stream
+Improvements over [wuchengwei/node-wget](https://github.com/wuchengwei/node-wget)
+- Handles 302 redirects (including infinite redirect loops)
+- Passes URL parameters
+- Better error reporting
+- Does not write using append (uses w+ identical to wget)
+- Handles gzip compression, allow you to automatically gunzip the stream
 
+## Install
 
-# Installing
 ```
 npm install wget-improved --save
 ```
+
+## download(src, output, options)
+
 ```js
 var wget = require('wget-improved');
 var src = 'http://nodejs.org/images/logo.svg';
 var output = '/tmp/logo.svg';
 var options = {
-//see options below
+    // see options below
 };
 var download = wget.download(src, output, options);
 download.on('error', function(err) {
@@ -35,9 +38,6 @@ download.on('progress', function(progress) {
     // code to show progress bar
 });
 ```
-
-
-<a name="request" />
 
 ## request(options, callback)
 
@@ -72,7 +72,9 @@ req.on('error', function(err) {
     console.log(err);
 });
 ```
-#download and request method options
+
+## options
+
 ```js
 
 options = {}
@@ -86,6 +88,16 @@ options = {}
         options.proxy.headers = {'User-Agent': 'Node'};
 ```
 
+## CLI
 
-#Todo
-Enable gzip when using request method
+```bash
+# If installed globally
+nwget https://raw.github.com/Fyrd/caniuse/master/data.json -O /tmp/data.json
+
+# If not installed globally
+./node_modules/.bin/nwget https://raw.github.com/Fyrd/caniuse/master/data.json -O /tmp/data.json
+```
+
+## Todo
+
+- Enable gzip when using request method
