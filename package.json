@@ -1,6 +1,6 @@
 {
     "name": "wget-improved",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "wget in nodejs, forked from wuchengwei/node-wget to add improvements and help maintain the project",
     "keywords": ["download", "http", "https", "ftp", "proxy", "wget"],
     "author": "Michael Barajas <michael.a.barajas@gmail.com>",
