@@ -3,7 +3,7 @@
 wget-improved simplifies retrieving files from any URL
 
 Improvements over [wuchengwei/node-wget](https://github.com/wuchengwei/node-wget)
-- Handles 302 redirects (including infinite redirect loops)
+- Handles 3xx redirects (including infinite redirect loops)
 - Passes URL parameters
 - Better error reporting
 - Does not write using append (uses w+ identical to wget)
@@ -18,13 +18,13 @@ npm install wget-improved --save
 ## download(src, output, options)
 
 ```js
-var wget = require('wget-improved');
-var src = 'http://nodejs.org/images/logo.svg';
-var output = '/tmp/logo.svg';
-var options = {
+const wget = require('wget-improved');
+const src = 'http://nodejs.org/images/logo.svg';
+const output = '/tmp/logo.svg';
+const options = {
     // see options below
 };
-var download = wget.download(src, output, options);
+let download = wget.download(src, output, options);
 download.on('error', function(err) {
     console.log(err);
 });
@@ -35,6 +35,7 @@ download.on('end', function(output) {
     console.log(output);
 });
 download.on('progress', function(progress) {
+    typeof progress === 'number'
     // code to show progress bar
 });
 ```
@@ -42,16 +43,16 @@ download.on('progress', function(progress) {
 ## request(options, callback)
 
 ```js
-var wget = require('wget');
-var options = {
+const wget = require('wget');
+const options = {
     protocol: 'https',
     host: 'raw.github.com',
     path: '/Fyrd/caniuse/master/data.json',
     proxy: 'http://host:port',
     method: 'GET'
 };
-var req = wget.request(options, function(res) {
-    var content = '';
+let req = wget.request(options, function(res) {
+    let content = '';
     if (res.statusCode === 200) {
         res.on('error', function(err) {
             console.log(err);
@@ -98,6 +99,18 @@ nwget https://raw.github.com/Fyrd/caniuse/master/data.json -O /tmp/data.json
 ./node_modules/.bin/nwget https://raw.github.com/Fyrd/caniuse/master/data.json -O /tmp/data.json
 ```
 
-## Todo
+## Changes from 2.0.0 to 3.0.0
+**Progress is now returned as a Number instead of a String**
 
-- Enable gzip when using request method
+**On start filesize can return null when the remote server does not provided content-lenth**
+
+Exception for not specifying protocol is now: `Your URL must use either HTTP or HTTPS.`
+
+Supports handling redirects that return a relative URL.
+
+You can now get events for the **total** number of bytes downloaded `download.on('bytes', function(bytes) {}...)`
+
+Request headers can be specified by passing an object to options.headers.
+
+Unit tests have been added for most download functionality and error cases and are a requirement for all PRs going forward!
+
