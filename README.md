@@ -1,4 +1,5 @@
 # wget-improved
+[![CircleCI](https://circleci.com/gh/bearjaws/node-wget/tree/master.svg?style=svg)](https://circleci.com/gh/bearjaws/node-wget/tree/master)
 
 wget-improved simplifies retrieving files from any URL
 
@@ -112,5 +113,5 @@ You can now get events for the **total** number of bytes downloaded `download.on
 
 Request headers can be specified by passing an object to options.headers.
 
-Unit tests have been added for most download functionality and error cases and are a requirement for all PRs going forward!
+Unit tests have been added for most download functionality and error cases. Tests are a requirement for all PRs going forward!
 
