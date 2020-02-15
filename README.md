@@ -103,7 +103,7 @@ nwget https://raw.github.com/Fyrd/caniuse/master/data.json -O /tmp/data.json
 ## Changes from 2.0.0 to 3.0.0
 **Progress is now returned as a Number instead of a String**
 
-**On start filesize can return null when the remote server does not provided content-lenth**
+**On start filesize can return null when the remote server does not provide content-length**
 
 Exception for not specifying protocol is now: `Your URL must use either HTTP or HTTPS.`
 
