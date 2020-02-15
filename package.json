@@ -24,6 +24,7 @@
     "bin": {
         "nwget": "./bin/nwget"
     },
+    "typings": "index.d.ts",
     "dependencies": {
         "minimist": "1.2.0",
         "tunnel": "0.0.6"

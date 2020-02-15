@@ -1,9 +1,10 @@
+// @ts-check
 let crypto = require('crypto');
 let fs = require('fs');
 let expect = require('chai').expect;
 let request = require('request');
 
-let wget = require('../lib/wget');
+let wget = require('..');
 
 let baseHTTP = 'http://localhost:8884';
 let metadata = {};
