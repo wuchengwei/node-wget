@@ -4,9 +4,9 @@ const http = require('http');
 
 const app = express();
 let size = 1024 * 1024;
-let file = new Buffer(size);
+let file = Buffer.alloc(size);
 
-let redirectFile = new Buffer(size);
+let redirectFile = Buffer.alloc(size);
 crypto.randomBytes(size, function(err, buffer) {
     file = buffer;
 });
@@ -75,7 +75,8 @@ module.exports = function() {
                     response.writeHead(200, {
                         'Content-Type': 'binary'
                     });
-                    response.write(new Buffer(858478).toString('hex'));
+                    let responseBuffer = Buffer.alloc(858478).toString('hex');
+                    response.write(responseBuffer);
                     response.end();
                 })
                 .listen(9933);
