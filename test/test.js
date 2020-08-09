@@ -6,7 +6,7 @@ let request = require('request');
 
 let wget = require('..');
 
-let baseHTTP = 'http://localhost:8884';
+let baseHTTP = 'http://localhost:8994';
 let metadata = {};
 before(function() {
     let server = require('./server');
@@ -20,7 +20,7 @@ before(function() {
 describe('Download Tests', function() {
     it('Should be able to download a file', function(done) {
         let download = wget.download(
-            'http://localhost:8884/file',
+            'http://localhost:8994/file',
             '/tmp/wget-test-file.bin'
         );
         let bytes = 0;
@@ -75,7 +75,7 @@ describe('Download Tests', function() {
 
     it('Should not append to the previous file.', function(done) {
         let download = wget.download(
-            'http://localhost:8884/file',
+            'http://localhost:8994/file',
             '/tmp/wget-test-file.bin'
         );
         download.on('error', function(err) {
@@ -97,7 +97,7 @@ describe('Download Tests', function() {
 
     it('Should handle 302 redirects that end with file download.', function(done) {
         let download = wget.download(
-            'http://localhost:8884/file/redirect',
+            'http://localhost:8994/file/redirect',
             '/tmp/wget-test-file2.bin'
         );
         download.on('end', function(output) {
@@ -121,7 +121,7 @@ describe('Download Tests', function() {
 
     it('Should handle infinite redirects', function(done) {
         let download = wget.download(
-            'http://localhost:8884/file/redirect/infinite',
+            'http://localhost:8994/file/redirect/infinite',
             '/tmp/wget-test-file2.bin'
         );
 
@@ -133,7 +133,7 @@ describe('Download Tests', function() {
 
     it('Should handle relative path redirect', function(done) {
         let download = wget.download(
-            'http://localhost:8884/file/redirect/relative',
+            'http://localhost:8994/file/redirect/relative',
             '/tmp/wget-test-file3.bin'
         );
         download.on('error', function(err) {
@@ -170,7 +170,7 @@ describe('Download Tests', function() {
     it('Should handle invalid protocol (no http/https)', function(done) {
         try {
             let download = wget.download(
-                'localhost:8884/file/redirect/infinite',
+                'localhost:8994/file/redirect/infinite',
                 '/tmp/wget-test-file2.bin'
             );
         } catch (err) {

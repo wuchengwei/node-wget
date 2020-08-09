@@ -34,7 +34,7 @@ app.get('/file/redirect', function(req, res) {
         res.send(redirectFile);
     } else {
         res.redirect(
-            'http://localhost:8884/file/redirect?count=' + String(count + 1)
+            'http://localhost:8994/file/redirect?count=' + String(count + 1)
         );
     }
 });
@@ -45,8 +45,8 @@ app.get('/file/redirect/infinite', function(req, res) {
         count = Number(req.query.count);
     }
     res.redirect(
-        'http://localhost:8884/file/redirect/infinite?count=' +
-            String(count + 1)
+        'http://localhost:8994/file/redirect/infinite?count=' +
+        String(count + 1)
     );
 });
 
@@ -68,7 +68,7 @@ app.get('/file/redirect/metadata', function(req, res) {
 
 module.exports = function() {
     return new Promise(function(resolve, reject) {
-        app.listen(8884, function() {
+        app.listen(8994, function() {
             // This server is used due to the inability to not send content-length headers in express.
             http
                 .createServer(function(request, response) {
