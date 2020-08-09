@@ -1,14 +1,7 @@
-version: 2
-jobs:
-  test:
-    docker:
-    - image: circleci/node:12.16.0-stretch
-    steps:
-    - checkout
-    - run: npm i
-    - run: npm test
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
 workflows:
-  version: 2
-  build_and_test:
+  node-tests:
     jobs:
-    - test
+      - node/test
