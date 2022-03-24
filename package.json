@@ -26,7 +26,7 @@
     },
     "typings": "index.d.ts",
     "dependencies": {
-        "minimist": "1.2.5",
+        "minimist": "1.2.6",
         "tunnel": "0.0.6"
     },
     "engines": {
