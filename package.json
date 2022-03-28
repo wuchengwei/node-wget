@@ -1,6 +1,6 @@
 {
     "name": "wget-improved",
-    "version": "3.3.0",
+    "version": "3.3.1",
     "description": "wget in nodejs, forked from wuchengwei/node-wget to add improvements and help maintain the project",
     "keywords": [
         "download",
